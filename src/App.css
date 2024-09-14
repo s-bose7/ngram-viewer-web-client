@@ -1,0 +1,13 @@
+.app-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+
