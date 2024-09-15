@@ -1,14 +1,32 @@
-import './App.css'
-import SearchBar from './components/search'
+import React, { useState } from 'react';
+import './App.css';
+import SearchBar from './components/search';
+import QueryParameters from './components/query';
 import Button from "@mui/material/Button";
 import SearchIcon from '@mui/icons-material/Search';
-import { auto } from '@popperjs/core';
 
 function App() {
+
+  const [selectedParams, setSelectedParams] = useState({
+    yearStart: '',
+    yearEnd: '',
+    corpus: '',
+    caseInsensitive: false,
+  });
+
+  const handleApply = (yearStart, yearEnd, corpus, caseInsensitive) => {
+    setSelectedParams({
+      yearStart,
+      yearEnd,
+      corpus,
+      caseInsensitive,
+    });
+  };
+
   return (
     <>
       <div className="app-container">
-        <h1>Ngram Viewer</h1>
+        <h2>Google Books Ngram Viewer</h2>
         <div className="search-container">
           <SearchBar />
           <Button 
@@ -24,16 +42,8 @@ function App() {
             Search
           </Button>
         </div>
-        <div>
-          <Button
-            variant="outlined"
-            sx={{
-              marginTop: 2,
-              padding: '5px 12px'
-            }}
-          >
-            Case-Insensitive
-          </Button>
+        <div className='query-parameters'>
+          <QueryParameters onApply={handleApply}/>
         </div>
       </div>
     </>

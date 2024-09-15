@@ -1,6 +1,7 @@
 .app-container {
+  margin-left: 130px;
+  margin-top: 5px;
   width: 80%;
-  margin: 0 auto;
 }
 
 .search-container {
@@ -9,5 +10,33 @@
   gap: 10px;
 }
 
+.query-parameters {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+
+
+.case-insensitive-button {
+  border-radius: 25px; 
+  text-transform: none;
+  padding: 5px, 12px;
+}
+
+.case-insensitive-button.active {
+  background-color: #1976d2;
+  color: white;
+}
+
+.MuiSelect-root.MuiInputBase-root {
+  border-radius: 25px !important; 
+  padding: 5px 12px;
+}
+
+.MuiButtonBase-root {
+  border-radius: 25px !important;
+}
 
 
